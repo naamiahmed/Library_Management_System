@@ -6,6 +6,14 @@ import ConfirmDialog from '../components/Common/ConfirmDialog.tsx';
 import { Book } from '../types/Book';
 import '../styles/global.css';
 
+const BOOK_CATEGORIES = [
+    'Adventure',
+    'Science Fiction',
+    'Story',
+    'Self Development',
+    'Other'
+] as const;
+
 const HomePage: React.FC = () => {
     const [books, setBooks] = React.useState<Book[]>([]);
     const [editingBook, setEditingBook] = React.useState<Book | null>(null);
@@ -13,6 +21,14 @@ const HomePage: React.FC = () => {
         show: false,
         bookId: null
     });
+
+    const groupBooksByCategory = () => {
+        const grouped: { [key: string]: Book[] } = {};
+        BOOK_CATEGORIES.forEach(category => {
+            grouped[category] = books.filter(book => book.category === category);
+        });
+        return grouped;
+    };
 
     const handleAddBook = (newBook: Book) => {
         setBooks([...books, newBook]);
@@ -38,6 +54,8 @@ const HomePage: React.FC = () => {
         setEditingBook(book);
     };
 
+    const groupedBooks = groupBooksByCategory();
+
     return (
         <div className="home-page">
             <h1>Library Management System</h1>
@@ -46,11 +64,22 @@ const HomePage: React.FC = () => {
                 onEditBook={handleEditBook} 
                 editingBook={editingBook} 
             />
-            <BookList 
-                books={books} 
-                onEdit={handleEditClick} 
-                onDelete={handleDeleteConfirm} 
-            />
+            <div className="categories-container">
+                {BOOK_CATEGORIES.map(category => (
+                    <div key={category} className="category-section">
+                        <h2>{category}</h2>
+                        {groupedBooks[category].length > 0 ? (
+                            <BookList 
+                                books={groupedBooks[category]} 
+                                onEdit={handleEditClick} 
+                                onDelete={handleDeleteConfirm} 
+                            />
+                        ) : (
+                            <p className="no-books">No books in this category</p>
+                        )}
+                    </div>
+                ))}
+            </div>
             <ConfirmDialog 
                 isOpen={deleteConfirm.show}
                 onConfirm={handleDeleteBook}
