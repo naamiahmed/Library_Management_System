@@ -1,8 +1,15 @@
 // src/components/Book/BookForm.tsx
 import React, { useState, useEffect } from 'react';
-import { Book } from '../../types/Book.ts';
+import { Book } from '../../types/Book';
 import '../../styles/global.css';
 
+const BOOK_CATEGORIES = [
+    'Adventure',
+    'Science Fiction',
+    'Story',
+    'Self Development',
+    'Other'
+] as const;
 
 interface BookFormProps {
     onAddBook: (book: Book) => void;
@@ -11,17 +18,29 @@ interface BookFormProps {
 }
 
 const BookForm: React.FC<BookFormProps> = ({ onAddBook, onEditBook, editingBook }) => {
-    const [book, setBook] = useState<Book>({ id: 0, title: '', author: '', description: '' });
+    const [book, setBook] = useState<Book>({ 
+        id: 0, 
+        title: '', 
+        author: '', 
+        description: '', 
+        category: BOOK_CATEGORIES[0] 
+    });
 
     useEffect(() => {
         if (editingBook) {
             setBook(editingBook);
         } else {
-            setBook({ id: 0, title: '', author: '', description: '' });
+            setBook({ 
+                id: 0, 
+                title: '', 
+                author: '', 
+                description: '', 
+                category: BOOK_CATEGORIES[0] 
+            });
         }
     }, [editingBook]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setBook({ ...book, [name]: value });
     };
@@ -33,7 +52,13 @@ const BookForm: React.FC<BookFormProps> = ({ onAddBook, onEditBook, editingBook 
         } else {
             onAddBook({ ...book, id: Date.now() });
         }
-        setBook({ id: 0, title: '', author: '', description: '' });
+        setBook({ 
+            id: 0, 
+            title: '', 
+            author: '', 
+            description: '', 
+            category: BOOK_CATEGORIES[0] 
+        });
     };
 
     return (
@@ -61,6 +86,18 @@ const BookForm: React.FC<BookFormProps> = ({ onAddBook, onEditBook, editingBook 
                 placeholder="Description" 
                 required 
             />
+            <select 
+                name="category" 
+                value={book.category} 
+                onChange={handleChange}
+                required
+            >
+                {BOOK_CATEGORIES.map(category => (
+                    <option key={category} value={category}>
+                        {category}
+                    </option>
+                ))}
+            </select>
             <button type="submit">{editingBook ? 'Update Book' : 'Add Book'}</button>
         </form>
     );

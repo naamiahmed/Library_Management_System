@@ -381,3 +381,21 @@ h1 {
         font-size: 2rem;
     }
 }
+
+
+/* Add to your global.css */
+.book-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.book-form select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}

@@ -15,6 +15,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete }) => {
             <h3>{book.title}</h3>
             <p>Author: {book.author}</p>
             <p>{book.description}</p>
+            <p>Category: {book.category}</p>
             <button onClick={onEdit}>Edit</button>
             <button onClick={onDelete}>Delete</button>
         </div>
