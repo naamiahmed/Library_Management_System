@@ -2,7 +2,7 @@
 import React from 'react';
 import BookList from '../components/Book/BookList.tsx';
 import BookForm from '../components/Book/BookForm.tsx';
-import { Book } from '../types/Book';
+import { Book } from '../types/Book.ts';
 
 const HomePage: React.FC = () => {
     const [books, setBooks] = React.useState<Book[]>([]);

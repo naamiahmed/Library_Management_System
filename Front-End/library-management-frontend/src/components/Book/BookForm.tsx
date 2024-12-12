@@ -1,6 +1,6 @@
 // src/components/Book/BookForm.tsx
 import React, { useState, useEffect } from 'react';
-import { Book } from '../../types/Book';
+import { Book } from '../../types/Book.ts';
 
 interface BookFormProps {
     onAddBook: (book: Book) => void;

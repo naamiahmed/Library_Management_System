@@ -1,10 +1,10 @@
 // src/routes.ts
 import { lazy } from 'react';
 
-const HomePage = lazy(() => import('./components/HomePage'));
-const AddBookPage = lazy(() => import('./components/AddBookPage'));
-const EditBookPage = lazy(() => import('./components/EditBookPage'));
-const NotFoundPage = lazy(() => import('./components/NotFoundPage'));
+const HomePage = lazy(() => import('./components/HomePage.tsx'));
+const AddBookPage = lazy(() => import('./components/AddBookPage.tsx'));
+const EditBookPage = lazy(() => import('./components/EditBookPage.tsx'));
+const NotFoundPage = lazy(() => import('./components/NotFoundPage.tsx'));
 
 const routes = [
     { path: '/', component: HomePage },

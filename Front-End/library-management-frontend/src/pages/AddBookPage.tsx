@@ -1,5 +1,5 @@
 import React from 'react';
-import BookForm from '../components/Book/BookForm';
+import BookForm from '../components/Book/BookForm.tsx';
 
 const AddBookPage: React.FC = () => {
     return (

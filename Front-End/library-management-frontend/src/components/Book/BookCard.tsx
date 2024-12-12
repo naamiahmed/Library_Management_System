@@ -1,6 +1,6 @@
 // src/components/Book/BookCard.tsx
 import React from 'react';
-import { Book } from '../../types/Book';
+import { Book } from '../../types/Book.ts';
 
 interface BookCardProps {
     book: Book;
