@@ -2,6 +2,8 @@
 import React from 'react';
 import { Book } from '../../types/Book.ts';
 import BookCard from './BookCard.tsx';
+import '../../styles/global.css';
+
 
 interface BookListProps {
     books: Book[];

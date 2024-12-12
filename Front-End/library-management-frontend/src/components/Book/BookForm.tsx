@@ -1,6 +1,8 @@
 // src/components/Book/BookForm.tsx
 import React, { useState, useEffect } from 'react';
 import { Book } from '../../types/Book.ts';
+import '../../styles/global.css';
+
 
 interface BookFormProps {
     onAddBook: (book: Book) => void;

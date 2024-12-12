@@ -1,6 +1,7 @@
 // src/components/Book/BookCard.tsx
 import React from 'react';
 import { Book } from '../../types/Book.ts';
+import '../../styles/global.css';
 
 interface BookCardProps {
     book: Book;
