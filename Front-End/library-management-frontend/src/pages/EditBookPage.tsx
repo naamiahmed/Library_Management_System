@@ -9,7 +9,7 @@ import '../styles/global.css';
 const EditBookPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     // Fetch the book details using the id and pass it to the BookForm
-    const book = { id: parseInt(id || '0'), title: '', author: '', description: '' }; // Replace with actual book fetching logic
+    const book = { id: parseInt(id || '0'), title: '', author: '', description: '', category: '' }; // Replace with actual book fetching logic
 
     return (
         <div>
