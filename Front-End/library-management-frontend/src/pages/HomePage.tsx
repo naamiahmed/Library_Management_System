@@ -5,6 +5,7 @@ import BookForm from '../components/Book/BookForm.tsx';
 import ConfirmDialog from '../components/Common/ConfirmDialog.tsx';
 import { Book } from '../types/Book';
 import '../styles/global.css';
+import '../services/bookService.tsx';
 
 const BOOK_CATEGORIES = [
     'Adventure',

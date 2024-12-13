@@ -1,21 +1,30 @@
+// src/services/api.ts
 import axios from 'axios';
 import { Book } from '../types/Book';
 
-const API_URL = 'http://localhost:5000/api/books';
+const API_BASE_URL = 'https://localhost:7001/api';
 
-export const getBooks = async (): Promise<Book[]> => {
-    const response = await axios.get(API_URL);
+const api = axios.create({
+  baseURL: API_BASE_URL
+});
+
+export const bookService = {
+  getBooks: async () => {
+    const response = await api.get('/books');
     return response.data;
-};
+  },
 
-export const addBook = async (book: Book): Promise<void> => {
-    await axios.post(API_URL, book);
-};
+  addBook: async (book: Omit<Book, 'id'>) => {
+    const response = await api.post('/books', book);
+    return response.data;
+  },
 
-export const updateBook = async (id: number, book: Book): Promise<void> => {
-    await axios.put(`${API_URL}/${id}`, book);
-};
+  updateBook: async (id: number, book: Book) => {
+    const response = await api.put(`/books/${id}`, book);
+    return response.data;
+  },
 
-export const deleteBook = async (id: number): Promise<void> => {
-    await axios.delete(`${API_URL}/${id}`);
+  deleteBook: async (id: number) => {
+    await api.delete(`/books/${id}`);
+  }
 };
