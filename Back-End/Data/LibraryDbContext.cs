@@ -15,10 +15,6 @@ namespace LibraryManagement.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
-                .Property(b => b.CreatedAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
             // Seed initial data
             modelBuilder.Entity<Book>().HasData(
                 new Book
@@ -27,8 +23,7 @@ namespace LibraryManagement.Data
                     Title = "Sample Book",
                     Author = "John Doe",
                     Description = "Sample Description",
-                    Category = "Fiction",
-                    CreatedAt = DateTime.Now
+                    Category = "Fiction"
                 }
             );
         }

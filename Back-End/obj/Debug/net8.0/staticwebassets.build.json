@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "GCJKWb9CiCJg2LZeP8Rwex9wtrWS9ic+8TBDkOX0TXE=",
+  "Hash": "6Vl+PToZpoxrQ4zKwuw24635FDCuM/4y8K1UIJtT7OY=",
   "Source": "Back-End",
   "BasePath": "_content/Back-End",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Back-End\\wwwroot",
+      "Source": "Back-End",
+      "ContentRoot": "D:\\Naami Files\\External Online Studies\\My Mini Projects\\Library_Management_System\\Back-End\\wwwroot\\",
+      "BasePath": "_content/Back-End",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

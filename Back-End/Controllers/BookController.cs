@@ -40,15 +40,14 @@ namespace LibraryManagement.Controllers
             return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
         }
 
-        [HttpPut("{id}")]
+                [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook(int id, Book book)
         {
             if (id != book.Id)
                 return BadRequest();
-
-            book.UpdatedAt = DateTime.Now;
+        
             _context.Entry(book).State = EntityState.Modified;
-
+        
             try
             {
                 await _context.SaveChangesAsync();
@@ -59,7 +58,7 @@ namespace LibraryManagement.Controllers
                     return NotFound();
                 throw;
             }
-
+        
             return NoContent();
         }
 

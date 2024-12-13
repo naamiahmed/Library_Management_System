@@ -158,3 +158,4 @@ D:\Naami Files\External Online Studies\My Mini Projects\Library_Management_Syste
 D:\Naami Files\External Online Studies\My Mini Projects\Library_Management_System\Back-End\obj\Debug\net8.0\Back-End.pdb
 D:\Naami Files\External Online Studies\My Mini Projects\Library_Management_System\Back-End\obj\Debug\net8.0\Back-End.genruntimeconfig.cache
 D:\Naami Files\External Online Studies\My Mini Projects\Library_Management_System\Back-End\obj\Debug\net8.0\ref\Back-End.dll
+D:\Naami Files\External Online Studies\My Mini Projects\Library_Management_System\Back-End\bin\Debug\net8.0\Back-End.staticwebassets.runtime.json
