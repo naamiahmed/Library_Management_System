@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6Vl+PToZpoxrQ4zKwuw24635FDCuM/4y8K1UIJtT7OY=",
+  "Hash": "1CP1ViorFstuWRvnqwShi2kUXrLS9tOW7qLg6j+pQDs=",
   "Source": "Back-End",
   "BasePath": "_content/Back-End",
   "Mode": "Default",
@@ -15,5 +15,6 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

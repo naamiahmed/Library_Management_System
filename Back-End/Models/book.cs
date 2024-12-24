@@ -1,4 +1,3 @@
-// Models/Book.cs
 using System.ComponentModel.DataAnnotations;
 
 namespace LibraryManagement.Models
@@ -8,17 +7,13 @@ namespace LibraryManagement.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(100)]
-        public string Author { get; set; }
+        public string Author { get; set; } = string.Empty;
 
-        [Required]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
-        [Required]
-        public string Category { get; set; }
+        public string Category { get; set; } = string.Empty;
     }
 }
